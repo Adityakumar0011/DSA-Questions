@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int removeElement(vector<int>& nums, int val) {
+        vector<int> c;                              // create a vector c
+        for(int i=0;i<nums.size();i++){             //iterate from oth index to last index of the given vector that is nums.
+            if((nums[i])!= val){                    // if the value at ith index is not equal to given value,push it to the vector c.
+                c.push_back(nums[i]);
+            }
+        }
+        nums.clear();                           // empty the given  vector nums
+        for(int i=0;i<c.size();i++){            // move the elements of vector c back to nums vector
+            nums.push_back(c[i]);
+        }
+       return c.size();                         // return the size of the vector
+    }
+};
