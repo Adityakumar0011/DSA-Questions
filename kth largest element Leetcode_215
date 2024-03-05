@@ -1,0 +1,13 @@
+class Solution {
+public:
+    int findKthLargest(vector<int>& nums, int k) {
+        int n=nums.size();           // store the size of vector in integer n
+        sort(nums.begin(),nums.end());   // Sort the given vector      
+        for(int i=n-1;i>=0;i--){         // start the iteration from last index of the array till starting index
+           if(i==n-k){                     // if the iteration is equal to the value of k then return the value at that index which is equal
+                return nums[i];             // to the  kth largest value.
+           }
+        } 
+        return nums[0];                     // if k is the last largest element it will return the starting element which is last largest.
+    }
+};
