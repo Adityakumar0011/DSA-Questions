@@ -1,0 +1,11 @@
+class Solution {
+public:
+    vector<int> sortedSquares(vector<int>& nums) {
+        for(int i=0;i<nums.size();i++){         // iterate from starting index to last index
+            nums[i]=nums[i]*nums[i];            // store the square of the given number at its respectibve index
+        }
+        sort(nums.begin(),nums.end());          // sort the updated array
+        
+    return nums;     
+    }
+};
