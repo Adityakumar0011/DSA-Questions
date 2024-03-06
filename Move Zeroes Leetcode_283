@@ -1,0 +1,21 @@
+class Solution {
+public:
+    void moveZeroes(vector<int>& nums) {
+        vector<int> v;      //create vector v
+        int n=nums.size();      // create n as size of vector
+        for(int i=0;i<n;i++){           // first move non-zero value to vector v
+            if(nums[i]!=0){
+                v.push_back(nums[i]);
+            }
+        }
+        for(int i=0;i<n;i++){           // move all zero to vector v at end
+            if(nums[i]==0){
+                v.push_back(nums[i]);
+            }
+        }
+        nums.clear();               // clear vector nums
+        for(int i=0;i<n;i++){       // push elements of vector v to nums
+            nums.push_back(v[i]);
+        }
+    }
+};
