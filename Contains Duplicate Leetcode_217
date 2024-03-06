@@ -1,0 +1,16 @@
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        int n=nums.size();      // store size ofgiven array in n
+        sort(nums.begin(),nums.end());      //sort the given array
+        if(n==1){
+            return false;
+        }
+        for(int i=0;i<n-1;i++){       // iterate loop from start index to n-2th index
+            if(nums[i]==nums[i+1]){     //if two consecutive numbers are equal,return true
+                return true;
+            }
+        }
+    return false;               // if no consecutive number found,it means no duplicate present,so return false
+    }
+};
