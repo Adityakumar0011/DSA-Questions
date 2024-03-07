@@ -1,0 +1,11 @@
+int removeDuplicates(vector<int> &arr, int n) {
+	vector<int> v;			// create a vector  v
+	for(int i=0;i<n-1;i++){		//start loop from start index to last-1 index
+		if(arr[i]!=arr[i+1]){	// if consecutive elements are not equal then push the value of current
+			v.push_back(arr[i]); // value in the array where the iterator is
+		}
+	}
+	v.push_back(arr[n-1]);		// find the size of the new array formed containing no duplicates
+	int ans=v.size();
+	return ans;					// return size of it.
+}
