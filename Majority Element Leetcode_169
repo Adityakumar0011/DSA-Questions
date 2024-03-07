@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        sort(nums.begin(),nums.end());      // sort the array
+        int start=0;                        // make start as 0th index
+        int end=nums.size()-1;              //end equals last index
+        int mid=start+(end-start)/2;        // find mid index
+        if(nums.size()==1){
+            return nums[0];             // if size of array is 1,return the only element in array
+        }
+        if(nums[mid]==nums[mid+1]){     //the array consists more than n/2 of a particular element
+            return nums[mid];           // it means that element must occupy space upto mid,so return mid
+        }
+
+       return nums[mid]; 
+    }
+    
+};
