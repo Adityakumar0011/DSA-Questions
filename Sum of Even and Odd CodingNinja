@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+	int even=0;	// initialize even with 0;
+	int odd=0;	//initialize odd with 0;
+	int n;
+	cin>>n;
+	while(n!=0){	
+		int rem=n%10;	//find each digit as rem
+		if(rem%2==0){	// if rem divisible by 2, it is even,
+			even=even+rem; //so update even as even+rem
+		}
+		else{
+			odd=odd+rem;	// if it is odd,update odd
+		}
+		n=n/10;
+	}
+	cout<<even<<" ";	// print even and odd
+	cout<<odd;
+	
+}
