@@ -1,0 +1,12 @@
+class Solution {
+public:
+    int findDuplicate(vector<int>& nums) {
+        sort(nums.begin(),nums.end());      // sort the given array
+        for(int i=0;i<nums.size()-1;i++){   //iterate from start to last-1 index
+            if(nums[i]==nums[i+1]){         //if consecutive are equal ,return it
+                return nums[i];
+            }
+        }
+    return 0;
+    }
+};
