@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+    /* Read input as specified in the question.
+     * Print output as specified in the question.
+     */
+     int sum=0; //initialize sum with zero
+     int n;
+     cin>>n;
+     int arr[n];
+     for(int i=0;i<n;i++){  // take input array
+         cin>>arr[i];
+    }
+    for(int i=0;i<n;i++){ // add each element of array to sum
+        sum=sum+arr[i];
+    }
+    cout<<sum;  //return sum
+    
+}
