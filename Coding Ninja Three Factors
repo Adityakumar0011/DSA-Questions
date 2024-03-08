@@ -1,0 +1,20 @@
+#include <bits/stdc++.h> 
+vector<int> hasThreeFactors(vector<int> &arr, int n) 
+{
+    vector<int> c;      // create avector c
+    for(int i=0;i<n;i++){       // start iteration from start index to last index
+        int factor=0;           // initialize a variable named as factor with 0
+        for(int j=1;j<=arr[i];j++){      //start iteration from 1 to the no. at current i index
+            if(arr[i]%j==0){            // if number%j==0 then increase factor by 1
+                factor +=1;
+            }
+        }
+        if(factor==3){  // if factor value is 3 it means the nmber of divisor of arr[i] is 3
+            c.push_back(1);  //so push 1 to the vector c
+        }
+        else{
+            c.push_back(0);  if not so above then push 0 to the vector c
+        }
+    }
+    return c;       //return vector c
+}
