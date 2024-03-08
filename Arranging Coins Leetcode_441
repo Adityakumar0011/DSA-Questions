@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int arrangeCoins(int n) {
+        int ans=n;      // store number of coins in variable ans
+        for(int i=1;i<=n;i++){  //start loop from first row
+            if(ans==i){     // if coins==row current row,return row number i.e i
+                return i;
+            }
+            else if(ans<i){     //It means if no. of coins is less than row number ,so return row-1
+                return i-1;
+            }
+            else{       //otherwise subtract the current row from total coins
+                ans=ans-i;
+            }
+        }
+       return ann;  
+    }
+};
