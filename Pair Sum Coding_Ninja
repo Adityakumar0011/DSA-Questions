@@ -1,0 +1,25 @@
+#include <bits/stdc++.h> 
+int pairSum(vector<int> &arr, int n, int target){
+	// Write your code here
+	int i=0;		//initialize i with starting index
+	int j=n-1;		//initialize from last index
+	int count =0;	// take count=0
+	while(i<j){		// iterate while i<j
+		if(arr[i]+arr[j]==target){	//if ith+jth element=target
+			count +=1;				// increase count by 1
+			i++;					// increase i and decrese j
+			j--;
+		}
+		else if(arr[i]+arr[j]<target){	// if sum<target increase i
+			i++;
+		}
+		else{
+			j--;		// if sum>target decrease j
+		}
+	}
+	if(count>0){		// if count greater than 0 print it
+		return count;
+	}
+	return -1;		// else print -1
+	
+}
