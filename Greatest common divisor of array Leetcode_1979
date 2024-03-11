@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int findGCD(vector<int>& nums) {
+        int min=nums[0];    // initialize min and max with 1st element
+        int max=nums[0];
+        int n=nums.size();      // store size of array in variable n
+        for(int i=1;i<n;i++){   // iterate i from 0th to last index
+            if(nums[i]>max){    //if it is greater than max then update value of max
+                max=nums[i];
+            }
+            if(nums[i]<min){    //if it is small than min then update the value of min
+                min=nums[i];
+            }
+        }
+        int gcd=1;      //make a variable gcd initialized with value 1
+        for(int i=1;i<=min;i++){        // iterate i from 1 to the min element
+            if(min%i==0 && max%i==0){   // if i divides both min and max then store it in gcd
+                gcd=i;
+            }
+        }
+        return gcd;   // return gcd;
+    }
+};
