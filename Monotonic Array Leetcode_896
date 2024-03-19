@@ -1,0 +1,28 @@
+class Solution {
+public:
+    bool isMonotonic(vector<int>& nums) {
+        int n=nums.size();
+        // descending order
+        int count=0;
+        for(int i=0;i<n-1;i++){
+            if(nums[i]>=nums[i+1]){
+                count++;
+            }
+        }
+        if(count==n-1){
+            return true;
+        }
+        else{           //ascending order
+            int counting=0;
+            for(int i=0;i<n-1;i++){
+                if(nums[i]<=nums[i+1]){
+                    counting++;
+                }
+            }
+            if(counting==n-1){
+                return true;
+            }
+        }
+        return false;
+    }
+};
