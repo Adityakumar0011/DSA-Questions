@@ -1,0 +1,14 @@
+bool isPowerOfTwo(int n)
+{	
+    if(n%2 != 0){           // if n is not divisible by 2, then return false;
+        return false;
+    else if(n%2==0){        // if n is divisible by 2
+        while(n!=1){            // divide it by 2 until it becomes 1
+            if(n%2 !=0){        // if n becomes  such that it is not divisible by 2 then return false
+                return false;
+            }
+            n=n/2;
+        }
+    }
+    return true;        // return true if n becomes 1 after dividing it by 2 each time
+}
