@@ -1,0 +1,13 @@
+#include <bits/stdc++.h> 
+int calculateSquare(int num)
+{
+ // the logic behind it is that if we add any number 'n' to itself 'n' times, we get square of n
+    
+   int ans=abs(num);             // finding the absolute value
+   int result=0;
+   while(ans>0){
+       result=result+abs(num);      // the num is added to itself num times
+       ans=ans-1;                       // after adding each time it is decremented by 1
+   }
+   return result;         // return the result which stores the square of the given number
+}
