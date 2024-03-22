@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int findMin(vector<int>& nums) {
+// given array is rotated sorted array.It means the start element will be greater than the smallest element
+        int min=nums[0];         // initialize first element as minimum
+        int s=0;                
+        int e=nums.size()-1;
+        int mid=s+(e-s)/2;
+        while(s<=e){        // apply binary search in the array
+            if(nums[mid]<min){      //if mid element is less than min then store it in min and move left
+                min=nums[mid];      // side to get if another is minimum than the current one
+                e=mid;
+            }
+            else{               // if the mid is not small than the min it means we have to move right 
+            s=mid+1;        // to get at the index from where the array is rotated which is the smallest element
+            }
+            mid=s+(e-s)/2;
+        }
+        return min;         // after searching in the array return the min element
+    }
+};
