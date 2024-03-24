@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int maximizeSum(vector<int>& nums, int k) {
+     // simply we have to take the larget element and add it increasing 1 to it k-1 times
+
+        sort(nums.begin(),nums.end());      // sort the array.The largest element will be at end of array
+        
+        int sum=0;                   // initialize sum with 0
+       
+        for(int i=1;i<=k;i++){                  // starting from 1 until k times
+            sum=sum+nums[nums.size()-1];             //take the largest element and add it to sum.
+            nums[nums.size()-1]=nums[nums.size()-1]+1;      // increase the largest element by 1
+        }
+       
+       return sum; // return the value of sum which is the maximum sum after increasing largest element k times
+    }
+};
